@@ -67,9 +67,9 @@
 
             <h2>{{main.carTypes[0].carType}}</h2>
 
-            <h3>{{main.carTypes[0].models[0]}} <span class="btn btn-xs btn-info">Buy</span></h3>
+            <h3>{{main.carTypes[0].models[0].model}} <span class="btn btn-xs btn-info" ng-show="main.carTypes[0].models[0].canPurchase">Buy</span></h3>
 
-            <h3>{{main.carTypes[0].models[1]}} <span class="btn btn-xs btn-info">Buy</span></h3>
+            <h3>{{main.carTypes[0].models[1].model}} <span class="btn btn-xs btn-info" ng-show="main.carTypes[0].models[1].canPurchase">Buy</span></h3>
         </div>
 
         <div class="col-xs-12 col-sm-6">
@@ -77,11 +77,11 @@
 
             <h2>{{main.carTypes[1].carType}}</h2>
 
-            <h3>{{main.carTypes[1].models[0]}} <span class="btn btn-xs btn-info">Buy</span></h3>
+            <h3>{{main.carTypes[1].models[0].model}} <span class="btn btn-xs btn-info" ng-show="main.carTypes[1].models[0].canPurchase">Buy</span></h3>
 
-            <h3>{{main.carTypes[1].models[1]}} <span class="btn btn-xs btn-info">Buy</span></h3>
+            <h3>{{main.carTypes[1].models[1].model}} <span class="btn btn-xs btn-info" ng-show="main.carTypes[1].models[1].canPurchase">Buy</span></h3>
 
-            <h3>{{main.carTypes[1].models[2]}} <span class="btn btn-xs btn-info">Buy</span></h3>
+            <h3>{{main.carTypes[1].models[2].model}} <span class="btn btn-xs btn-info" ng-show="main.carTypes[1].models[2].canPurchase">Buy</span></h3>
         </div>
 
     </div>
