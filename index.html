@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="main">
 <head lang="en">
     <meta charset="UTF-8">
     <link href='bootstrap/css/bootstrap.css' rel='stylesheet'>
@@ -8,7 +8,8 @@
 </head>
 <body>
 
-<script type="application/javascript" src="angular/angular.min.js"></script>
+<script type="application/javascript" src="angular/angular.js"></script>
+<script type="application/javascript" src="js/controllers.js"></script>
 
 <div class="navbar navbar-default navbar-fixed-top">
     <div class='container'>
@@ -41,21 +42,13 @@
                     <li><a href="">Others</a></li>
                 </ul>
             </li>
-            <li>
-                <a href='#' data-toggle="dropdown">SUVs <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="">Navigator</a></li>
-                    <li class="divider"></li>
-                    <li><a href="">Others</a></li>
-                </ul>
-            </li>
         </ul>
     </div>
 </div>
 
 <div class="container">
     <div class="row text-center well">
-        <div class="col-xs-12 col-sm-10 col-md-6 col-md-offset-3 col-lg-5 col-lg-offset-3">
+        <div class="col-xs-12 col-sm-10 col-md-6 col-md-offset-3">
             <h1>Lincoln cars</h1>
 
             <div class="hidden-xs">
@@ -63,41 +56,34 @@
             </div>
         </div>
 
-        <div class="col-xs-12 col-sm-2 col-md-3 col-lg-4">
+        <div class="col-xs-12 col-sm-2 col-md-3">
             <button type="button" class="btn btn-lg btn-primary">Buy Car</button>
         </div>
     </div>
 
-    <div class="row text-center features">
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+    <div class="row text-center features" ng-controller="MainController as main">
+        <div class="col-xs-12 col-sm-6">
             <i class="glyphicon glyphicon-flash"></i>
 
-            <h2>Cars</h2>
+            <h2>{{main.carTypes[0].carType}}</h2>
 
-            <h3>MKZ</h3>
+            <h3>{{main.carTypes[0].models[0]}} <span class="btn btn-xs btn-info">Buy</span></h3>
 
-            <h3>MKS</h3>
+            <h3>{{main.carTypes[0].models[1]}} <span class="btn btn-xs btn-info">Buy</span></h3>
         </div>
 
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-            <i class="glyphicon glyphicon-wrench"></i>
+        <div class="col-xs-12 col-sm-6">
+            <i class="glyphicon glyphicon-flash"></i>
 
-            <h2>Crossovers</h2>
+            <h2>{{main.carTypes[1].carType}}</h2>
 
-            <h3>MKC</h3>
+            <h3>{{main.carTypes[1].models[0]}} <span class="btn btn-xs btn-info">Buy</span></h3>
 
-            <h3>MKX</h3>
+            <h3>{{main.carTypes[1].models[1]}} <span class="btn btn-xs btn-info">Buy</span></h3>
 
-            <h3>MKT</h3>
+            <h3>{{main.carTypes[1].models[2]}} <span class="btn btn-xs btn-info">Buy</span></h3>
         </div>
 
-        <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-0">
-            <i class="glyphicon glyphicon-plane"></i>
-
-            <h2>SUVs</h2>
-
-            <h3>Navigator</h3>
-        </div>
     </div>
 </div>
 
