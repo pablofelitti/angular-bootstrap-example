@@ -80,7 +80,7 @@
                     <ul class="nav nav-pills center-pills">
                         <li ng-class="{active:tabController.isSelected(1)}"><a ng-click="tabController.selectTab(1)">Specs</a>
                         </li>
-                        <li ng-class="{active:tabController.isSelected(2)}"><a ng-click="tabController.selectTab(2)">Rating</a>
+                        <li ng-class="{active:tabController.isSelected(2)}"><a ng-click="tabController.selectTab(2)">Reviews</a>
                         </li>
                     </ul>
 
@@ -90,9 +90,24 @@
                         <p>{{tab}}</p>
                     </div>
                     <div class="panel" ng-show="tabController.isSelected(2)">
-                        <h4>Rating</h4>
+                        <h4>Reviews</h4>
 
-                        <p>{{tab}}</p>
+                        <form name="reviewForm" ng-controller="ReviewController as reviewController"
+                              ng-submit="reviewController.addReview(model)">
+
+                            <blockquote>{{reviewController.review.description}}</blockquote>
+
+                            <div class="btn-group">
+                                <a href='#' class="btn btn-default dropdown-toggle btn-select" data-toggle="dropdown">Select
+                                    vote <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="">Cool</a></li>
+                                    <li><a href="">Bad</a></li>
+                                </ul>
+                            </div>
+                            <textarea ng-model="reviewController.review.description"></textarea>
+                            <input type="submit" value="Submit">
+                        </form>
                     </div>
                 </section>
             </div>
