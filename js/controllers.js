@@ -23,5 +23,19 @@
 
     app.controller("MainController", function () {
         this.carTypes = carTypes;
-    })
+    });
+
+    app.controller("TabController", function () {
+        this.currentTab = 1;
+        this.selectTab = function (tabNumber) {
+            this.currentTab = tabNumber;
+        };
+        this.isSelected = function (tabNumber) {
+            if (this.currentTab === tabNumber) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    });
 })();

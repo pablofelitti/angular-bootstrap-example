@@ -9,3 +9,7 @@ body {
 footer {
     background-color: lightgrey;
 }
+
+.center-pills {
+    display: inline-block;
+}

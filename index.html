@@ -69,16 +69,39 @@
 
             <div ng-repeat="model in carType.models">
                 <img ng-src="{{model.img}}">
+
                 <h3>{{model.name}} <span class="btn btn-xs btn-info"
-                                    ng-show="model.canPurchase">Buy ({{model.price | currency}})</span>
+                                         ng-show="model.canPurchase">Buy ({{model.price | currency}})</span>
+                                    <span class="btn btn-xs btn-danger"
+                                          ng-hide="model.canPurchase">Not available</span>
                 </h3>
+
+                <section ng-controller="TabController as tabController">
+                    <ul class="nav nav-pills center-pills">
+                        <li ng-class="{active:tabController.isSelected(1)}"><a ng-click="tabController.selectTab(1)">Specs</a>
+                        </li>
+                        <li ng-class="{active:tabController.isSelected(2)}"><a ng-click="tabController.selectTab(2)">Rating</a>
+                        </li>
+                    </ul>
+
+                    <div class="panel" ng-show="tabController.isSelected(1)">
+                        <h4>Specs</h4>
+
+                        <p>{{tab}}</p>
+                    </div>
+                    <div class="panel" ng-show="tabController.isSelected(2)">
+                        <h4>Rating</h4>
+
+                        <p>{{tab}}</p>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
 </div>
 
 <footer>
-    <div class="container">
+    <div class=" container">
         <p>This is a footer example</p>
         <ul class="list-unstyled list-inline">
             <li>Cars</li>
