@@ -95,15 +95,28 @@
                         <form name="reviewForm" ng-controller="ReviewController as reviewController"
                               ng-submit="reviewController.addReview(model)">
 
-                            <blockquote>{{reviewController.review.description}}</blockquote>
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody ng-repeat="review in model.reviews">
+                                <tr ng-class="{success:review.isCool(), danger:!review.isCool()}">
+                                    <td>{{review.description}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                            <blockquote>Your description: "{{reviewController.review.description}}"</blockquote>
 
                             <div class="btn-group">
-                                <a href='#' class="btn btn-default dropdown-toggle btn-select" data-toggle="dropdown">Select
-                                    vote <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="">Cool</a></li>
-                                    <li><a href="">Bad</a></li>
-                                </ul>
+                                <div class="form-group">
+                                    <select class="form-control"
+                                            ng-model="reviewController.review.vote"
+                                            ng-options="option.value as option.text for option in options">
+                                    </select>
+                                </div>
                             </div>
                             <textarea ng-model="reviewController.review.description"></textarea>
                             <input type="submit" value="Submit">

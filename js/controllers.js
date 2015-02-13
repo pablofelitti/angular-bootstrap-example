@@ -17,20 +17,18 @@
             this.currentTab = tabNumber;
         };
         this.isSelected = function (tabNumber) {
-            if (this.currentTab === tabNumber) {
-                return true;
-            } else {
-                return false;
-            }
+            return this.currentTab === tabNumber;
         }
     });
 
-    app.controller("ReviewController", function () {
-        this.review = {};
+    app.controller("ReviewController", ["$scope", function ($scope) {
+        $scope.options = [{value: 0, text: "Cooool"}, {value: 1, text: "Baaaad"}];
+        this.review = new Review();
         this.addReview = function (model) {
             model.addReview(this.review);
-        }
-    });
+            this.review = new Review();
+        };
+    }]);
 })
 ();
 
@@ -44,8 +42,21 @@ function Model(name, canPurchase, price, img) {
     this.canPurchase = canPurchase;
     this.price = price;
     this.img = img;
+    this.reviews = [];
 
     this.addReview = function (review) {
         this.reviews.push(review);
+    }
+}
+
+function Review(vote, description) {
+    this.vote = vote;
+    this.description = description;
+    this.isCool = function () {
+        if (this.review.vote === undefined) {
+
+        } else {
+            return this.review.vote === 0;
+        }
     }
 }
