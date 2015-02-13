@@ -62,28 +62,17 @@
     </div>
 
     <div class="row text-center features" ng-controller="MainController as main">
-        <div class="col-xs-12 col-sm-6">
+        <div class="col-xs-12 col-sm-6" ng-repeat="carType in main.carTypes">
             <i class="glyphicon glyphicon-flash"></i>
 
-            <h2>{{main.carTypes[0].carType}}</h2>
+            <h2>{{carType.name}}</h2>
 
-            <h3>{{main.carTypes[0].models[0].model}} <span class="btn btn-xs btn-info" ng-show="main.carTypes[0].models[0].canPurchase">Buy</span></h3>
-
-            <h3>{{main.carTypes[0].models[1].model}} <span class="btn btn-xs btn-info" ng-show="main.carTypes[0].models[1].canPurchase">Buy</span></h3>
+            <div ng-repeat="model in carType.models">
+                <h3>{{model.name}} <span class="btn btn-xs btn-info"
+                                    ng-show="model.canPurchase">Buy</span>
+                </h3>
+            </div>
         </div>
-
-        <div class="col-xs-12 col-sm-6">
-            <i class="glyphicon glyphicon-flash"></i>
-
-            <h2>{{main.carTypes[1].carType}}</h2>
-
-            <h3>{{main.carTypes[1].models[0].model}} <span class="btn btn-xs btn-info" ng-show="main.carTypes[1].models[0].canPurchase">Buy</span></h3>
-
-            <h3>{{main.carTypes[1].models[1].model}} <span class="btn btn-xs btn-info" ng-show="main.carTypes[1].models[1].canPurchase">Buy</span></h3>
-
-            <h3>{{main.carTypes[1].models[2].model}} <span class="btn btn-xs btn-info" ng-show="main.carTypes[1].models[2].canPurchase">Buy</span></h3>
-        </div>
-
     </div>
 </div>
 
