@@ -68,8 +68,9 @@
             <h2>{{carType.name}}</h2>
 
             <div ng-repeat="model in carType.models">
+                <img ng-src="{{model.img}}">
                 <h3>{{model.name}} <span class="btn btn-xs btn-info"
-                                    ng-show="model.canPurchase">Buy</span>
+                                    ng-show="model.canPurchase">Buy ({{model.price | currency}})</span>
                 </h3>
             </div>
         </div>
