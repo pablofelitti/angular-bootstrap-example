@@ -108,17 +108,17 @@
                                 </tbody>
                             </table>
 
-                            <blockquote>Your description: "{{reviewController.review.description}}"</blockquote>
+                            <blockquote>Your description: "{{review.description}}"</blockquote>
 
                             <div class="btn-group">
                                 <div class="form-group">
                                     <select class="form-control"
-                                            ng-model="reviewController.review.vote"
+                                            ng-model="selectedVote"
                                             ng-options="option.value as option.text for option in options">
                                     </select>
                                 </div>
                             </div>
-                            <textarea ng-model="reviewController.review.description"></textarea>
+                            <textarea ng-model="review.description"></textarea>
                             <input type="submit" value="Submit">
                         </form>
                     </div>

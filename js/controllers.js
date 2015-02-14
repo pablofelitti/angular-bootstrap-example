@@ -23,10 +23,16 @@
 
     app.controller("ReviewController", ["$scope", function ($scope) {
         $scope.options = [{value: 0, text: "Cooool"}, {value: 1, text: "Baaaad"}];
-        this.review = new Review();
+        $scope.selectedVote = $scope.options[0].value;
+        $scope.review = new Review();
         this.addReview = function (model) {
-            model.addReview(this.review);
-            this.review = new Review();
+            $scope.review.vote = $scope.selectedVote;
+            model.addReview($scope.review);
+            this.initController();
+        };
+        this.initController = function () {
+            $scope.review = new Review();
+            $scope.selectedVote = 0;
         };
     }]);
 })
@@ -53,10 +59,10 @@ function Review(vote, description) {
     this.vote = vote;
     this.description = description;
     this.isCool = function () {
-        if (this.review.vote === undefined) {
+        if (this.vote === undefined) {
 
         } else {
-            return this.review.vote === 0;
+            return this.vote === 0;
         }
     }
 }
