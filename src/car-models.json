@@ -1,0 +1,14 @@
+[
+  {
+    "name": "MKZ",
+    "canPurchase": true,
+    "price": "15000.35",
+    "img": "img/mkz.png"
+  },
+  {
+    "name": "MKS",
+    "canPurchase": true,
+    "price": "22000.40",
+    "img": "img/mks.png"
+  }
+]
