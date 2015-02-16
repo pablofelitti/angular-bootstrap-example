@@ -93,7 +93,7 @@
                         <h4>Reviews</h4>
 
                         <form name="reviewForm" ng-controller="ReviewController as reviewController"
-                              ng-submit="reviewController.addReview(model)">
+                              ng-submit="reviewForm.$valid && reviewController.addReview(model)" novalidate>
 
                             <table class="table">
                                 <thead>
@@ -118,7 +118,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <textarea ng-model="review.description"></textarea>
+                            <textarea ng-model="review.description" required></textarea>
                             <input type="submit" value="Submit">
                         </form>
                     </div>
