@@ -27,6 +27,7 @@
         this.initController = function () {
             $scope.review = new Review();
             $scope.selectedVote = 0;
+            $scope.reviewForm.$setPristine();
         };
     }])
 })
