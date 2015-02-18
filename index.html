@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <link href='bootstrap/css/bootstrap.css' rel='stylesheet'>
     <link href='css/main.css' rel='stylesheet'>
+    <link href='css/animate.css' rel='stylesheet'>
     <title>Lincoln cars</title>
 </head>
 <body>
 
 <script type="application/javascript" src="angular/angular.js"></script>
+<script type="application/javascript" src="angular/angular-animate.js"></script>
 
 <script type="application/javascript" src="js/services.js"></script>
 <script type="application/javascript" src="js/model.js"></script>
@@ -105,7 +107,7 @@
                                     <th>Description</th>
                                 </tr>
                                 </thead>
-                                <tbody ng-repeat="review in model.reviews">
+                                <tbody ng-repeat="review in model.reviews" class="reviewAnimation">
                                 <tr ng-class="{success:review.isCool(), danger:!review.isCool()}">
                                     <td>{{review.description}}</td>
                                 </tr>

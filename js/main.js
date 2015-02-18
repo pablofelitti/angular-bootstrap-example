@@ -1,4 +1,4 @@
 (function () {
-    var app = angular.module("main", ["controllers", "services"]);
+    var app = angular.module("main", ["ngAnimate", "controllers", "services"]);
 })
 ();
