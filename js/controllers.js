@@ -1,8 +1,8 @@
 (function () {
     var app = angular.module("controllers", []);
 
-    app.controller("MainController", ["carTypeService", function (carTypeService) {
-        this.carTypes = carTypeService.loadCarTypes();
+    app.controller("MainController", ["carTypeService", "$scope", function (carTypeService, $scope) {
+        $scope.carTypes = carTypeService.loadCarTypes();
     }]);
 
     app.controller("TabController", function () {
