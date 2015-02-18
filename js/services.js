@@ -5,6 +5,7 @@
         this.loadCarTypes = function () {
 
             var carModels = [];
+            var crossoverModels = [];
 
             $http.get("src/car-models.json").success(function (result) {
                 angular.forEach(result, function (value) {
@@ -14,7 +15,14 @@
                 alert("error loading car models");
             });
 
-            var crossoverModels = [new Model("MKC", false, 10000.00, "img/mkc.png"), new Model("MKX", false, 8500.25, "img/mkx.png"), new Model("MKT", true, 3500.50, "img/mkt.png")];
+            $http.get("src/crossover-models.json").success(function (result) {
+                angular.forEach(result, function (value) {
+                    crossoverModels.push(new Model(value.name, value.canPurchase, value.price, value.img));
+                });
+            }).error(function () {
+                alert("error loading crossover models");
+            });
+
             var carType = new CarType("Cars", carModels);
             var crossoverType = new CarType("Crossovers", crossoverModels);
             return [carType, crossoverType];

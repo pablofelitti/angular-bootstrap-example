@@ -22,6 +22,21 @@ footer {
     border-color: #78FA89;
 }
 
+.modelAnimation.ng-move,
+.modelAnimation.ng-enter {
+    -webkit-animation: zoomIn 2s;
+    -moz-animation: zoomIn 2s;
+    -o-animation: zoomIn 2s;
+    animation: zoomIn 2s;
+}
+
+.modelAnimation.ng-leave {
+    -webkit-animation: zoomOut 2s;
+    -moz-animation: zoomOut 2s;
+    -o-animation: zoomOut 2s;
+    animation: zoomOut 2s;
+}
+
 .reviewAnimation.ng-move,
 .reviewAnimation.ng-enter {
     -webkit-animation: fadeIn 1s;
