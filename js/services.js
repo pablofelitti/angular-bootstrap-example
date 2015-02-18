@@ -5,7 +5,7 @@
 
         this.retrieveCarModels = function () {
             var carModels = [];
-            $http.get("src/car-models.json").success(function (data) {
+            $http.get("resources/car-models.json").success(function (data) {
                 angular.forEach(data, function (value) {
                     carModels.push(new Model(value.name, value.canPurchase, value.price, value.img));
                 });
@@ -17,7 +17,7 @@
 
         this.retrieveCrossoverModels = function () {
             var crossoverModels = [];
-            $http.get("src/crossover-models.json").success(function (data) {
+            $http.get("resources/crossover-models.json").success(function (data) {
                 angular.forEach(data, function (value) {
                     crossoverModels.push(new Model(value.name, value.canPurchase, value.price, value.img));
                 });
