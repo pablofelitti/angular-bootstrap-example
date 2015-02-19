@@ -38,5 +38,9 @@
             $rootScope.hideChatController = !$rootScope.hideChatController;
         }
     }]);
+
+    app.controller("ChatController", ["$scope", function ($scope) {
+
+    }]);
 })
 ();

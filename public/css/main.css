@@ -85,6 +85,22 @@ footer {
 
 .chat-window .user-input {
     height: 10%;
+    max-height: 40px;
+}
+
+.chat-window input[type=text] {
+    height: 100%;
+    width: 80%;
+    border: 0;
+    margin: 0;
+    float: left;
+}
+
+.chat-window input[type=button] {
+    height: 100%;
+    width: 20%;
+    margin: 0;
+    border: 0;
 }
 
 .chat-window .notifications {

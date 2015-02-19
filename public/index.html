@@ -57,7 +57,7 @@
     </div>
 </div>
 
-<div class="chat-window chatWindowAnimation" ng-hide="hideChatController" ng-controller="NavigationBarController as navigationBarController">
+<div class="chat-window chatWindowAnimation" ng-hide="hideChatController" ng-controller="ChatController as chatController">
     <div class="conversation-log">
         <p>ddd</p>
 
@@ -89,7 +89,10 @@
 
         <p>guihi</p>
     </div>
-    <div class="user-input"></div>
+    <div class="user-input">
+        <input type="text">
+        <input type="button" value="Send">
+    </div>
     <div class="notifications"></div>
 </div>
 
