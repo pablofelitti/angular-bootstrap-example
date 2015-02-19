@@ -52,6 +52,20 @@ footer {
     animation: fadeOut 1s;
 }
 
+.chatWindowAnimation.ng-hide-remove {
+    -webkit-animation: fadeIn 1s;
+    -moz-animation: fadeIn 1s;
+    -o-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+.chatWindowAnimation.ng-hide-add {
+    -webkit-animation: fadeOut 1s;
+    -moz-animation: fadeOut 1s;
+    -o-animation: fadeOut 1s;
+    animation: fadeOut 1s;
+}
+
 .chat-window {
     width: 30%;
     height: 100%;

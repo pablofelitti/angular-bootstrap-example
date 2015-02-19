@@ -31,7 +31,7 @@
         };
     }]);
 
-    app.controller("ChatController", ["$rootScope", function ($rootScope) {
+    app.controller("NavigationBarController", ["$rootScope", function ($rootScope) {
         $rootScope.hideChatController = false;
 
         this.toggleChat = function () {
