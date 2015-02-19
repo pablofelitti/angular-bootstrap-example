@@ -40,4 +40,13 @@
         }
     }]);
 
+    app.service("chatService", function () {
+        io.connect('http://localhost:8080');
+        console.log("Connection with chat server successful");
+
+        this.sendMessage = function () {
+            console.log("MOCK Message sent");
+        }
+    });
+
 })();

@@ -39,8 +39,12 @@
         }
     }]);
 
-    app.controller("ChatController", ["$scope", function ($scope) {
+    app.controller("ChatController", ["$scope", "chatService", function ($scope, chatService) {
         $scope.chatHistory = [new ChatLine("line1"), new ChatLine("line2"), new ChatLine("line3"), new ChatLine("line4"), new ChatLine("line5"), new ChatLine("line6")];
+
+        this.sendMessage = function () {
+            chatService.sendMessage();
+        }
     }]);
 })
 ();
