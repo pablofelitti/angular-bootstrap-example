@@ -26,3 +26,7 @@ function Review(vote, description) {
         }
     }
 }
+
+function ChatLine(text) {
+    this.text = text;
+}

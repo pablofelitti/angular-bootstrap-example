@@ -59,35 +59,7 @@
 
 <div class="chat-window chatWindowAnimation" ng-hide="hideChatController" ng-controller="ChatController as chatController">
     <div class="conversation-log">
-        <p>ddd</p>
-
-        <p>eee</p>
-
-        <p>asdf</p>
-
-        <p>fsdfd</p>
-
-        <p>fsdfd</p>
-
-        <p>fsdfd</p>
-
-        <p>fsdfd</p>
-
-        <p>fsdfd</p>
-
-        <p>fsdfd</p>
-
-        <p>fsdfd</p>
-
-        <p>fsdfd</p>
-
-        <p>sdfdsfsd</p>
-
-        <p>sdsf</p>
-
-        <p>gfhj</p>
-
-        <p>guihi</p>
+        <p ng-repeat="chatLine in chatHistory">{{chatLine.text}}</p>
     </div>
     <div class="user-input">
         <input type="text">

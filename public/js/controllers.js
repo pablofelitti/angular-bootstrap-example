@@ -40,7 +40,7 @@
     }]);
 
     app.controller("ChatController", ["$scope", function ($scope) {
-
+        $scope.chatHistory = [new ChatLine("line1"), new ChatLine("line2"), new ChatLine("line3"), new ChatLine("line4"), new ChatLine("line5"), new ChatLine("line6")];
     }]);
 })
 ();
