@@ -7,3 +7,4 @@ NodeJS:
 2) Install Express for nodejs "npm install --save express"
 3) Install Socket.IO for nodejs "npm install --save socket.io"
 4) Run with "node server.js" command
+5) Enter http://localhost:8080
