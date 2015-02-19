@@ -30,6 +30,14 @@
         </div>
         <ul class="nav navbar-nav navbar-right collapse navbar-collapse">
             <li>
+                <div ng-controller="ChatController as chatController">
+                    <a href="#" ng-click="chatController.toggleChat()">Toggle chat</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">MKZ</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
                 <a href='#' data-toggle="dropdown">Cars <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="">MKZ</a></li>
@@ -51,6 +59,8 @@
         </ul>
     </div>
 </div>
+
+<div class="chat-window" ng-hide="hideChatController" ng-controller="ChatController as chatController"></div>
 
 <div class="container">
     <div class="row text-center well">

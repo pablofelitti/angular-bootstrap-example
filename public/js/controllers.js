@@ -29,6 +29,14 @@
             $scope.selectedVote = 0;
             $scope.reviewForm.$setPristine();
         };
-    }])
+    }]);
+
+    app.controller("ChatController", ["$rootScope", function ($rootScope) {
+        $rootScope.hideChatController = false;
+
+        this.toggleChat = function () {
+            $rootScope.hideChatController = !$rootScope.hideChatController;
+        }
+    }]);
 })
 ();
