@@ -39,12 +39,22 @@
         }
     }]);
 
-    app.controller("ChatController", ["$scope", "chatService", function ($scope, chatService) {
-        $scope.chatHistory = [new ChatLine("line1"), new ChatLine("line2"), new ChatLine("line3"), new ChatLine("line4"), new ChatLine("line5"), new ChatLine("line6")];
+    app.controller("ChatController", ["$scope", "$timeout", "chatService", function ($scope, $timeout, chatService) {
+        var controllerScope = $scope;
+        controllerScope.chatHistory = [];
+        controllerScope.newChatLine = new ChatLine(null);
+        $scope.$on("serverMessage", function (event, data) {
+            controllerScope.chatHistory = chatService.retrieveChatHistory();
+        });
 
         this.sendMessage = function () {
-            chatService.sendMessage();
-        }
+            chatService.sendMessage($scope.newChatLine.text);
+            this.initController();
+        };
+
+        this.initController = function () {
+            $scope.newChatLine = new ChatLine(null);
+        };
     }]);
 })
 ();

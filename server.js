@@ -11,6 +11,11 @@ var PORT = 8080;
 
 io.on("connection", function (client) {
     console.log("Client connected!");
+    client.emit("server-message", "Welcome user!!");
+
+    client.on("client-message", function (message) {
+        console.log("Client message entered: " + message);
+    });
 });
 
 app.use(express.static(__dirname + "/public"));

@@ -40,13 +40,32 @@
         }
     }]);
 
-    app.service("chatService", function () {
-        io.connect('http://localhost:8080');
+    app.service("chatService", ["$rootScope", "$timeout", function ($rootScope, $timeout) {
+
+        var TIMEOUT_TO_WAIT_TO_SEND_WELCOME_MESSAGE = 2000;
+        var chatHistory = [];
+        var socketConnection = io.connect("http://localhost:8080");
+
         console.log("Connection with chat server successful");
 
-        this.sendMessage = function () {
-            console.log("MOCK Message sent");
+        socketConnection.on("server-message", function (message) {
+            console.log("Server message received: " + message);
+            $timeout(function () {
+                chatHistory.push(new ChatLine(message));
+                $rootScope.$broadcast("serverMessage");
+            }, TIMEOUT_TO_WAIT_TO_SEND_WELCOME_MESSAGE);
+        });
+
+        this.retrieveChatHistory = function () {
+            return chatHistory;
+        };
+
+        this.sendMessage = function (message) {
+            socketConnection.emit("client-message", message);
+            chatHistory.push(new ChatLine(message));
+            $rootScope.$broadcast("serverMessage");
+            console.log("Message sent: " + message);
         }
-    });
+    }]);
 
 })();
